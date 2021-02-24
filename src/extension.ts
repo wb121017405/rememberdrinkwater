@@ -25,6 +25,7 @@ export function activate(context: vscode.ExtensionContext) {
 		drinkWaterInterval = setInterval(()=>{
 			vscode.window.showInformationMessage('您好,我是您的“提醒喝水小助手”希望此刻看到消息的人可以和我一起来喝一杯水。\n及时排便洗手，记得关门。\n一小时后的我继续提醒您喝水,和我一起成为一天八杯水的人吧!');
 		},3600000);
+		vscode.window.showInformationMessage('喝水小助手开始计时，一小时后我会提醒您喝水');
 	});
 	let disposable2 = vscode.commands.registerCommand('rememberdrinkwater.stopWork', () => {
 		// The code you place here will be executed every time your command is executed
