@@ -22,7 +22,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
     vscode.StatusBarAlignment.Right,
     100
   );
-  let startTime = Date.parse(new Date());
+  let startTime = Date.parse(String(new Date()));
   let disposable = vscode.commands.registerCommand(
     "rememberdrinkwater.startWork",
     () => {
@@ -38,7 +38,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
       };
       drinkWaterInterval = setInterval(() => {
         const tempTime = new Date();
-        const tempTimestamp = Date.parse(tempTime);
+        const tempTimestamp = Date.parse(String(tempTime));
         const nowHours = tempTime.getHours();
         myStatusBarItem.text = getHoursMinutes(tempTimestamp - startTime);
         subscriptions.push(myStatusBarItem);

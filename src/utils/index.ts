@@ -3,7 +3,7 @@ export function getTime() {
   let now_time =
     date.getFullYear() +
     "-" +
-    parseInt(date.getMonth() + 1) +
+    parseInt(String(date.getMonth() + 1)) +
     "-" +
     date.getDate() +
     " " +
