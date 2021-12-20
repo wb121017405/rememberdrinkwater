@@ -4,7 +4,7 @@
 	"description": "每小时弹出一次提醒喝水",
 	"publisher": "wb121017405",
 	"repository": "https://github.com/wb121017405/rememberdrinkwater",
-	"version": "0.0.5",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.53.0"
 	},
