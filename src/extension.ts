@@ -19,6 +19,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
       const iKnow: vscode.MessageItem = {
         title: "知道了",
       };
+      startTime = Date.parse(String(new Date()));
       drinkWaterInterval = setInterval(() => {
         const tempTime = new Date();
         const tempTimestamp = Date.parse(String(tempTime));
@@ -36,7 +37,8 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
       vscode.window.showInformationMessage(
         "喝水小助手开始计时，一小时后我会提醒您喝水"
       );
-      myStatusBarItem.tooltip = "喝水倒计时";
+      myStatusBarItem.tooltip = "点击关闭喝水倒计时";
+      myStatusBarItem.command = "rememberdrinkwater.stopWork";
       myStatusBarItem.show();
     }
   );
@@ -46,6 +48,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
       clearInterval(drinkWaterInterval);
       drinkWaterInterval = null;
       vscode.window.showInformationMessage("喝水小助手已关闭");
+      myStatusBarItem.text = '$(watch) 59:59';
       myStatusBarItem.hide();
     }
   );
